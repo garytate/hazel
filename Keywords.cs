@@ -20,9 +20,34 @@ namespace Hazel
         {
             bool isOutputDecided = false;
             bool isOutput = false;
+            bool isOnlyCharacters = false;
+            bool isOnlyCharactersDecided = false;
             string outputFile = "";
             List<string> results = new List<string>();
 
+            while (!isOnlyCharactersDecided)
+            {
+                Console.Write("Search only characters from characters.txt [Y/N]: ");
+                string keyInput = Console.ReadKey().Key.ToString();
+                Console.WriteLine();
+                if (keyInput == "Y")
+                {
+                    isOnlyCharacters = true;
+                    isOnlyCharactersDecided = true;
+                }
+                else if (keyInput == "N")
+                {
+                    isOnlyCharacters = false;
+                    isOnlyCharactersDecided = true;
+                }
+                else
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("\nIncorrect value.");
+                    Console.ResetColor();
+                }
+            }
+            
             while (!isOutputDecided)
             {
                 Console.Write("Output to text file? [Y/N]: ");
@@ -65,7 +90,46 @@ namespace Hazel
                 fs.Close();
             }
 
-            foreach (string character in characters)
+            if (isOnlyCharacters)
+            {
+                foreach (string character in characters)
+                {
+                    foreach (string logFile in logs)
+                    {
+                        string line;
+                        System.IO.StreamReader log = new System.IO.StreamReader(logFile);
+
+                        while ((line = log.ReadLine()) != null)
+                        {
+                            string lowerLine = line.ToLower();
+                            string lowerCharacter = character.ToLower();
+                            if (line.Contains(character))
+                            {
+                                foreach (string keyword in keywords)
+                                {
+                                    if (line.Contains(keyword.ToLower()))
+                                    {
+                                        List<string> printKeyword = line.Split(keyword.ToLower()).ToList();
+                                        for (int i = 0; i < printKeyword.Count; i++)
+                                        {
+                                            Console.Write(printKeyword[i]);
+                                            if (i != printKeyword.Count - 1)
+                                            {
+                                                Console.ForegroundColor = ConsoleColor.Red;
+                                                Console.Write(keyword);
+                                                Console.ResetColor();
+                                            }
+                                        }
+                                        Console.WriteLine();
+                                        results.Add(String.Format("{0}: {1}", Path.GetFileName(logFile), line));
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            else
             {
                 foreach (string logFile in logs)
                 {
@@ -75,33 +139,28 @@ namespace Hazel
                     while ((line = log.ReadLine()) != null)
                     {
                         string lowerLine = line.ToLower();
-                        string lowerCharacter = character.ToLower();
-                        if (line.Contains(character))
+                        foreach (string keyword in keywords)
                         {
-                            foreach (string keyword in keywords)
+                            if (line.Contains(keyword.ToLower()))
                             {
-                                if (line.Contains(keyword.ToLower()))
+                                List<string> printKeyword = line.Split(keyword.ToLower()).ToList();
+                                for (int i = 0; i < printKeyword.Count; i++)
                                 {
-                                    List<string> printKeyword = line.Split(keyword.ToLower()).ToList();
-                                    for (int i = 0; i < printKeyword.Count; i++)
+                                    Console.Write(printKeyword[i]);
+                                    if (i != printKeyword.Count - 1)
                                     {
-                                        Console.Write(printKeyword[i]);
-                                        if (i != printKeyword.Count - 1)
-                                        {
-                                            Console.ForegroundColor = ConsoleColor.Red;
-                                            Console.Write(keyword);
-                                            Console.ResetColor();
-                                        }
+                                        Console.ForegroundColor = ConsoleColor.Red;
+                                        Console.Write(keyword);
+                                        Console.ResetColor();
                                     }
-                                    Console.WriteLine();
-                                    results.Add(String.Format("{0}: {1}", Path.GetFileName(logFile), line));
                                 }
+                                Console.WriteLine();
+                                results.Add(String.Format("{0}: {1}", Path.GetFileName(logFile), line));
                             }
                         }
                     }
                 }
             }
-
             if (isOutput)
             {
                 System.IO.File.WriteAllLines(outputFile, results);
