@@ -15,6 +15,7 @@ namespace Hazel
             FileManager fileManagerObj = new FileManager();
             Character characterObj = new Character();
             Activity activityObj = new Activity();
+            Keywords keywordObj = new Keywords();
             
             // Initialising the program
             string appTitle = "Hazel";
@@ -67,10 +68,9 @@ namespace Hazel
                         activityObj.displayActivity(appDirectory, characters, logFiles);
                         break;
                     case "D4":
-                        // Search for Keywords
-                        Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine("{0} not yet supported.", options[3]);
-                        Console.ResetColor();
+                        // Check for Keywords
+                        List<string> keywords = keywordObj.getKeywords();
+                        keywordObj.displayKeywords(appDirectory, characters, logFiles, keywords);
                         break;
                     case "D5":
                         // Get Log Files
