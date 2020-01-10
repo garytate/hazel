@@ -1,6 +1,8 @@
 # Hazel
 Administrative log hunting and activity checkers.
 
+![Interface](https://i.imgur.com/sfTzpH6.png)
+
 ## Dependencies
 [.NET Framework 4.0 (or above) - Microsoft](https://dotnet.microsoft.com/download/dotnet-framework)
 
