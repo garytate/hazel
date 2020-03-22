@@ -7,7 +7,7 @@ Administrative log hunting and activity checkers.
 ![Interface](https://i.imgur.com/sfTzpH6.png)
 
 ## Dependencies
-[.NET Framework 3.0 (or above) - Microsoft](https://dotnet.microsoft.com/download/dotnet-framework)
+[.NET Core 3.0 (or above) - Microsoft](https://dotnet.microsoft.com/download/dotnet-framework)
 
 ## Building from source
 - Navigate to /src/ in a terminal
