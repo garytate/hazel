@@ -18,5 +18,6 @@ jobs:
       with:
         dotnet-version: 3.1.101
     - name: Build with dotnet
-      run: cd src
-      run: dotnet build --configuration Release
+      run: |
+        cd src
+        dotnet build --configuration Release
