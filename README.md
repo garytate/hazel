@@ -1,4 +1,6 @@
-![Logo](https://i.imgur.com/dvqnGqo.png)
+<p align="center">
+  <img src="https://i.imgur.com/dvqnGqo.png"/>
+</p>
 ======
 Administrative log hunting and activity checkers.
 
