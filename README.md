@@ -1,4 +1,5 @@
-# Hazel
+[!Logo](https://i.imgur.com/dvqnGqo.png)
+======
 Administrative log hunting and activity checkers.
 
 ![Interface](https://i.imgur.com/sfTzpH6.png)
