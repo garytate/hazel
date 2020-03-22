@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://i.imgur.com/dvqnGqo.png"/>
+  <img src="https://i.imgur.com/1BRB4cF.png"/>
 </p>
 
 Administrative log hunting and activity checkers.
