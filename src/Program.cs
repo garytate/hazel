@@ -7,8 +7,6 @@ namespace Hazel
     {
         static void Main(string[] args)
         {
-            // Console.WriteLine();
-            // string input = Console.ReadLine();
 
             // Class imports
             Display displayObj = new Display();
@@ -20,7 +18,7 @@ namespace Hazel
             
             // Initialising the program
             string appTitle = "Hazel";
-            string appVersion = "1.0.0";
+            string appVersion = "20.3a";
             string appAuthor = "Gary Tate";
             string appDirectory = System.Environment.CurrentDirectory;
             bool active = true;
@@ -105,18 +103,6 @@ namespace Hazel
                 Console.WriteLine();
                 
             }
-
-            /*foreach(string logFile in logFiles)
-            {
-                Console.WriteLine(logFile);
-            }*/
-
-            /*foreach (string logs in fileManagerObj.getAllLogs())
-            {
-                Console.WriteLine(logs);
-            }*/
         }
-
     }
-
 }

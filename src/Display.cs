@@ -15,7 +15,6 @@ namespace Hazel
                 Console.Write("[{0}] ", i + 1);
                 Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.WriteLine(options[i]);
-                //Console.WriteLine("[{0}] {1}", i + 1, options[i]); // Output: [1] Load Characters
             }
             Console.ResetColor();
 
