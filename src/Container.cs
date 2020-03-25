@@ -8,7 +8,7 @@ namespace Hazel
     class Container
     {
 
-        public void returnAllContainers(List<string> logs)
+        public void ReturnAllContainers(List<string> logs)
         {
 
             List<string> uniqueContainers = new List<string>();

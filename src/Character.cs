@@ -7,7 +7,7 @@ namespace Hazel
 {
     class Character
     {
-        public List<string> getAllCharacters(string directory)
+        public List<string> GetAllCharacters(string directory)
         {
             List<string> characters = new List<string>();
             string currentLine = string.Empty;

@@ -8,7 +8,7 @@ namespace Hazel
 {
     class Keywords
     {
-        public List<string> getKeywords()
+        public List<string> GetKeywords()
         {
             Console.WriteLine("Insert keywords seperated by commas.  Example: red, blue, blonde, fist");
             string keywords = Console.ReadLine();
@@ -16,7 +16,7 @@ namespace Hazel
             return keywordList;
         }
 
-        public void displayKeywords(string directory, List<string> characters, List<string> logs, List<string> keywords)
+        public void DisplayKeywords(string directory, List<string> characters, List<string> logs, List<string> keywords)
         {
             bool isOutputDecided = false;
             bool isOutput = false;

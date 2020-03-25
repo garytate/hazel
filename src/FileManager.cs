@@ -7,7 +7,7 @@ namespace Hazel
 {
     class FileManager
     {
-        public List<string> getAllLogs(string directory)
+        public List<string> GetAllLogs(string directory)
         {
             List<string> logFiles = new List<string>();
             if (!Directory.Exists(directory + "\\logs"))

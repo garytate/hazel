@@ -7,7 +7,7 @@ namespace Hazel
 {
     class Activity
     {
-        public void displayActivity(string directory, List<string> characters, List<string> logs)
+        public void DisplayActivity(string directory, List<string> characters, List<string> logs)
         {
             bool isOutputDecided = false;
             bool isOutput = false;

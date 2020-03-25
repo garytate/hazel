@@ -18,7 +18,7 @@ namespace Hazel
             
             // Initialising the program
             string appTitle = "Hazel";
-            string appVersion = "20.3a";
+            string appVersion = "20.3c";
             string appAuthor = "Gary Tate";
             string appDirectory = System.Environment.CurrentDirectory;
             bool active = true;
@@ -39,8 +39,8 @@ namespace Hazel
             Console.WriteLine("{0}: Version {1} maintained by {2}.\n", appTitle, appVersion, appAuthor);
             Console.ResetColor();
 
-            List<string> logFiles = fileManagerObj.getAllLogs(appDirectory);
-            List<string> characters = characterObj.getAllCharacters(appDirectory);
+            List<string> logFiles = fileManagerObj.GetAllLogs(appDirectory);
+            List<string> characters = characterObj.GetAllCharacters(appDirectory);
 
             while (active) {
                 displayObj.DisplayMenu(options, logFiles, characters);
@@ -54,7 +54,7 @@ namespace Hazel
                 {
                     case "D1":
                         //Reload Characters
-                        logFiles = fileManagerObj.getAllLogs(appDirectory);
+                        logFiles = fileManagerObj.GetAllLogs(appDirectory);
                         Console.WriteLine("Files reloaded.");
                         break;
                     case "D2":
@@ -65,12 +65,12 @@ namespace Hazel
                         break;
                     case "D3":
                         // Check Activity
-                        activityObj.displayActivity(appDirectory, characters, logFiles);
+                        activityObj.DisplayActivity(appDirectory, characters, logFiles);
                         break;
                     case "D4":
                         // Check for Keywords
-                        List<string> keywords = keywordObj.getKeywords();
-                        keywordObj.displayKeywords(appDirectory, characters, logFiles, keywords);
+                        List<string> keywords = keywordObj.GetKeywords();
+                        keywordObj.DisplayKeywords(appDirectory, characters, logFiles, keywords);
                         break;
                     case "D5":
                         // Get Log Files
@@ -88,7 +88,7 @@ namespace Hazel
                         break;
                     case "D7":
                         // containers
-                        ContainerObj.returnAllContainers(logFiles);
+                        ContainerObj.ReturnAllContainers(logFiles);
                         break;
                     case "D8":
                         // Exit program
