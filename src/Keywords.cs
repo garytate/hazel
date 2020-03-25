@@ -22,7 +22,7 @@ namespace Hazel
             bool isOutput = false;
             bool isOnlyCharacters = false;
             bool isOnlyCharactersDecided = false;
-            string outputFile = "";
+            string outputFile = string.Empty;
             List<string> results = new List<string>();
 
             while (!isOnlyCharactersDecided)
@@ -81,8 +81,8 @@ namespace Hazel
 
                 Console.Write("\nOutput file name: ");
                 string outputFileName = Console.ReadLine();
-                outputFile = outputDir + "\\" + outputFileName + ".txt";
-                if (outputFile == "")
+                outputFile = $@"{outputDir}\{outputFileName}.txt";
+                if (outputFile == string.Empty)
                 {
                     outputFile = "output";
                 }
