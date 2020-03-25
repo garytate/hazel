@@ -90,81 +90,53 @@ namespace Hazel
                 fs.Close();
             }
 
+            foreach (string logFile in logs)
+            {
+                List<string> log = new List<string>(File.ReadAllLines(logFile));
+                foreach (string keyword in keywords)
+                {
+                    results.AddRange(log.Where(line => line.Contains(keyword)));
+                }
+            }
+
+            List<string> output = new List<string>();
+            
             if (isOnlyCharacters)
             {
                 foreach (string character in characters)
                 {
-                    foreach (string logFile in logs)
-                    {
-                        string line;
-                        System.IO.StreamReader log = new System.IO.StreamReader(logFile);
-
-                        while ((line = log.ReadLine()) != null)
-                        {
-                            string lowerLine = line.ToLower();
-                            string lowerCharacter = character.ToLower();
-                            if (line.Contains(character))
-                            {
-                                foreach (string keyword in keywords)
-                                {
-                                    if (line.Contains(keyword.ToLower()))
-                                    {
-                                        List<string> printKeyword = line.Split(keyword.ToLower()).ToList();
-                                        for (int i = 0; i < printKeyword.Count; i++)
-                                        {
-                                            Console.Write(printKeyword[i]);
-                                            if (i != printKeyword.Count - 1)
-                                            {
-                                                Console.ForegroundColor = ConsoleColor.Red;
-                                                Console.Write(keyword);
-                                                Console.ResetColor();
-                                            }
-                                        }
-                                        Console.WriteLine();
-                                        results.Add(String.Format("{0}: {1}", Path.GetFileName(logFile), line));
-                                    }
-                                }
-                            }
-                        }
-                    }
+                    output.AddRange(results.Where(line => line.Contains(character)));
                 }
             }
             else
             {
-                foreach (string logFile in logs)
-                {
-                    string line;
-                    System.IO.StreamReader log = new System.IO.StreamReader(logFile);
+                output = results;
+            }
 
-                    while ((line = log.ReadLine()) != null)
+            foreach(string keyword in keywords)
+            {
+                foreach (string match in output)
+                {
+                    List<string> printKeyword = match.Split(keyword.ToLower()).ToList();
+                    for (int i = 0; i < printKeyword.Count; i++)
                     {
-                        string lowerLine = line.ToLower();
-                        foreach (string keyword in keywords)
+                        Console.Write(printKeyword[i]);
+                        if (i != printKeyword.Count - 1)
                         {
-                            if (line.Contains(keyword.ToLower()))
-                            {
-                                List<string> printKeyword = line.Split(keyword.ToLower()).ToList();
-                                for (int i = 0; i < printKeyword.Count; i++)
-                                {
-                                    Console.Write(printKeyword[i]);
-                                    if (i != printKeyword.Count - 1)
-                                    {
-                                        Console.ForegroundColor = ConsoleColor.Red;
-                                        Console.Write(keyword);
-                                        Console.ResetColor();
-                                    }
-                                }
-                                Console.WriteLine();
-                                results.Add(String.Format("{0}: {1}", Path.GetFileName(logFile), line));
-                            }
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.Write(keyword);
+                            Console.ResetColor();
                         }
                     }
+                    Console.WriteLine();
                 }
             }
+
             if (isOutput)
             {
-                System.IO.File.WriteAllLines(outputFile, results);
+                System.IO.File.WriteAllLines(outputFile, output);
             }
+        
         }
     }
 }
