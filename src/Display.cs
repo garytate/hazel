@@ -32,7 +32,7 @@ namespace Hazel
             {
                 Console.WriteLine("There is a new update at https://github.com/garytate/hazel/releases");
             }
-            
+
         }
 
     }

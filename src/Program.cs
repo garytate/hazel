@@ -19,7 +19,7 @@ namespace Hazel
             
             // Initialising the program
             string appTitle = "Hazel";
-            string appVersion = "20.3c";
+            string appVersion = "20.03c";
             string appAuthor = "Gary Tate";
             string appDirectory = System.Environment.CurrentDirectory;
             bool active = true;
@@ -37,7 +37,7 @@ namespace Hazel
 
             // Check for latest release
             displayObj.NotifyRelease(appVersion);
-            System.Threading.Thread.Sleep(500);
+            System.Threading.Thread.Sleep(1000);
 
             // Welcome Message
             Console.ForegroundColor = ConsoleColor.Cyan;
