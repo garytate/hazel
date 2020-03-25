@@ -25,7 +25,7 @@ namespace Hazel
             {
                 var characterFile = File.Create(charTextFile);
                 characterFile.Close(); // Allows the user to edit the file
-                Console.WriteLine("Please place characters into /characters/characters.txt then press any key.");
+                Console.WriteLine("Enter characters (one per line) into /characters/characters.txt then press any key.");
                 Console.ReadKey();
             }
 

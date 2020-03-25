@@ -14,7 +14,7 @@ namespace Hazel
             Int32 charResults, charDaysActive;
             bool isCharActive;
             List<string> results = new List<string>();
-            string outputFile = "";
+            string outputFile = string.Empty;
 
             while (!isOutputDecided)
             {
@@ -41,7 +41,8 @@ namespace Hazel
 
             if (isOutput)
             {
-                string outputDir = directory + "\\output";
+                string outputDir = $@"{directory}\output";
+
                 if (!Directory.Exists(outputDir))
                 {
                     Directory.CreateDirectory(outputDir);
@@ -49,10 +50,12 @@ namespace Hazel
 
                 Console.Write("\nOutput file name: ");
                 string outputFileName = Console.ReadLine();
-                outputFile = outputDir + "\\" + outputFileName + ".txt";
-                if (outputFile == "") {
-                    outputFile = "output";
+
+                if (outputFileName == string.Empty) {
+                    outputFileName = "output";
                 }
+
+                outputFile = outputDir + "\\" + outputFileName + ".txt";
                 FileStream fs = File.Create(outputFile);
                 fs.Close();
             }
