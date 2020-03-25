@@ -19,7 +19,7 @@ namespace Hazel
             
             // Initialising the program
             string appTitle = "Hazel";
-            string appVersion = "20.03c";
+            string appVersion = "20.03d";
             string appAuthor = "Gary Tate";
             string appDirectory = System.Environment.CurrentDirectory;
             bool active = true;
