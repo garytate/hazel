@@ -30,7 +30,9 @@ namespace Hazel
 
             if (appVersion != latest.TagName)
             {
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("There is a new update at https://github.com/garytate/hazel/releases");
+                Console.ResetColor();
             }
 
         }
