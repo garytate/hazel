@@ -10,16 +10,23 @@ namespace Hazel
         public List<string> GetAllLogs(string directory)
         {
             List<string> logFiles = new List<string>();
-            if (!Directory.Exists(directory + "\\logs"))
+            string logDirectory = $@"{directory}\logs";
+            
+            // Create log folder if not existant.
+            if (!Directory.Exists(logDirectory))
             {
-                Directory.CreateDirectory(directory + "\\logs");
+                Directory.CreateDirectory(logDirectory);
                 Console.WriteLine("Copy your log files into the /logs folder then press any key.");
                 Console.ReadKey();
             }
-            foreach (string file in Directory.EnumerateFiles((directory + "\\logs"), "*.txt"))
+
+            // Collect all log files into a List<string>
+            foreach (string file in Directory.EnumerateFiles((logDirectory), "*.txt"))
             {
                 logFiles.Add(file);
             }
+
+            // List<string> - file paths of all log files.
             return logFiles;
 
         }
