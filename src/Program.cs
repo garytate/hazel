@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Octokit;
 
 namespace Hazel
 {
@@ -33,6 +34,10 @@ namespace Hazel
                 "Get Containers",
                 "Quit Program"
             };
+
+            // Check for latest release
+            displayObj.NotifyRelease(appVersion);
+            System.Threading.Thread.Sleep(500);
 
             // Welcome Message
             Console.ForegroundColor = ConsoleColor.Cyan;

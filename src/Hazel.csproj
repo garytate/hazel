@@ -6,4 +6,8 @@
     <ApplicationIcon>assets\icon.ico</ApplicationIcon>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Octokit" Version="0.45.0" />
+  </ItemGroup>
+
 </Project>
