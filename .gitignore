@@ -2,3 +2,5 @@
 /src/obj/
 
 /.vs/
+
+*.txt
