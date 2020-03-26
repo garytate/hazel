@@ -1,0 +1,10 @@
+C:\Users\Gary\Documents\Development\Hazel\src\hazel\obj\Debug\hazel.csprojAssemblyReference.cache
+C:\Users\Gary\Documents\Development\Hazel\src\hazel\obj\Debug\Hazel_V2.frm_Main.resources
+C:\Users\Gary\Documents\Development\Hazel\src\hazel\obj\Debug\Hazel_V2.frm_SplashScreen.resources
+C:\Users\Gary\Documents\Development\Hazel\src\hazel\obj\Debug\Hazel_V2.Properties.Resources.resources
+C:\Users\Gary\Documents\Development\Hazel\src\hazel\obj\Debug\hazel.csproj.GenerateResource.cache
+C:\Users\Gary\Documents\Development\Hazel\src\hazel\obj\Debug\hazel.csproj.CoreCompileInputs.cache
+C:\Users\Gary\Documents\Development\Hazel\src\hazel\obj\Debug\Hazel V2.exe
+C:\Users\Gary\Documents\Development\Hazel\src\hazel\obj\Debug\Hazel V2.pdb
+C:\Users\Gary\Documents\Development\Hazel\src\hazel\bin\Debug\Hazel V2.exe
+C:\Users\Gary\Documents\Development\Hazel\src\hazel\bin\Debug\Hazel V2.pdb

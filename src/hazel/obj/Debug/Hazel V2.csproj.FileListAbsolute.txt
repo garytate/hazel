@@ -1,0 +1,20 @@
+C:\Users\J-Lov\source\repos\Hazel V2\Hazel V2\obj\Debug\Hazel_V2.frm_Main.resources
+C:\Users\J-Lov\source\repos\Hazel V2\Hazel V2\obj\Debug\Hazel_V2.frm_SplashScreen.resources
+C:\Users\J-Lov\source\repos\Hazel V2\Hazel V2\obj\Debug\Hazel_V2.Properties.Resources.resources
+C:\Users\J-Lov\source\repos\Hazel V2\Hazel V2\obj\Debug\Hazel V2.csproj.GenerateResource.cache
+C:\Users\J-Lov\source\repos\Hazel V2\Hazel V2\obj\Debug\Hazel V2.csproj.CoreCompileInputs.cache
+C:\Users\J-Lov\source\repos\Hazel V2\Hazel V2\obj\Debug\Hazel V2.csprojAssemblyReference.cache
+C:\Users\J-Lov\source\repos\Hazel V2\Hazel V2\bin\Debug\Hazel V2.exe
+C:\Users\J-Lov\source\repos\Hazel V2\Hazel V2\bin\Debug\Hazel V2.pdb
+C:\Users\J-Lov\source\repos\Hazel V2\Hazel V2\obj\Debug\Hazel V2.exe
+C:\Users\J-Lov\source\repos\Hazel V2\Hazel V2\obj\Debug\Hazel V2.pdb
+C:\Users\Gary\Desktop\hazel\Hazel V2\bin\Debug\Hazel V2.exe
+C:\Users\Gary\Desktop\hazel\Hazel V2\bin\Debug\Hazel V2.pdb
+C:\Users\Gary\Desktop\hazel\Hazel V2\obj\Debug\Hazel V2.csprojAssemblyReference.cache
+C:\Users\Gary\Desktop\hazel\Hazel V2\obj\Debug\Hazel_V2.frm_Main.resources
+C:\Users\Gary\Desktop\hazel\Hazel V2\obj\Debug\Hazel_V2.frm_SplashScreen.resources
+C:\Users\Gary\Desktop\hazel\Hazel V2\obj\Debug\Hazel_V2.Properties.Resources.resources
+C:\Users\Gary\Desktop\hazel\Hazel V2\obj\Debug\Hazel V2.csproj.GenerateResource.cache
+C:\Users\Gary\Desktop\hazel\Hazel V2\obj\Debug\Hazel V2.csproj.CoreCompileInputs.cache
+C:\Users\Gary\Desktop\hazel\Hazel V2\obj\Debug\Hazel V2.exe
+C:\Users\Gary\Desktop\hazel\Hazel V2\obj\Debug\Hazel V2.pdb
