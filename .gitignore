@@ -4,3 +4,6 @@
 /.vs/
 
 *.txt
+
+/src/hazel/bin/
+/src/hazel/obj/
