@@ -6,6 +6,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.IO;
+using System.Diagnostics;
 
 namespace Hazel
 {
@@ -18,13 +20,12 @@ namespace Hazel
 
         private void frm_Main_Load(object sender, EventArgs e)
         {
-            List<string> logs = new List<string>();
-            logs.Add("25-11-2019");
-            logs.Add("30-12-2020");
+            FileManager fileManager = new FileManager();
+            List<string> logs = fileManager.GetAllLogs(Directory.GetCurrentDirectory());
 
             foreach (string log in logs)
             {
-                logList.Nodes.Add(log);
+                logList.Nodes.Add(Path.ChangeExtension(Path.GetFileName(log), null));
             }
         }
     }

@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.IO;
+using System.Diagnostics;
 
 namespace Hazel
 {
@@ -16,12 +17,10 @@ namespace Hazel
             if (!Directory.Exists(logDirectory))
             {
                 Directory.CreateDirectory(logDirectory);
-                Console.WriteLine("Copy your log files into the /logs folder then press any key.");
-                Console.ReadKey();
             }
 
             // Collect all log files into a List<string>
-            foreach (string file in Directory.EnumerateFiles((logDirectory), "*.txt"))
+            foreach (string file in Directory.GetFiles((logDirectory), "*.txt"))
             {
                 logFiles.Add(file);
             }

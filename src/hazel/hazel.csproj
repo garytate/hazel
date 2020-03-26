@@ -76,6 +76,7 @@
     <Compile Include="frm_SplashScreen.Designer.cs">
       <DependentUpon>frm_SplashScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="libs\FileManager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frm_Main.resx">
