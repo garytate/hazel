@@ -1,4 +1,4 @@
-﻿namespace Hazel_V2
+﻿namespace Hazel
 {
     partial class frm_SplashScreen
     {
@@ -32,7 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_SplashScreen));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.blueProgressBar1 = new Hazel_V2.BlueProgressBar();
+            this.blueProgressBar1 = new Hazel.BlueProgressBar();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -40,7 +40,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Hazel_V2.Properties.Resources.appIcon;
+            this.pictureBox1.Image = global::Hazel.Properties.Resources.appIcon;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox1.Name = "pictureBox1";

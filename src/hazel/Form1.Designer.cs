@@ -1,4 +1,4 @@
-﻿namespace Hazel_V2
+﻿namespace Hazel
 {
     partial class frm_Main
     {
@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Main));
             this.tlayout_main = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.treeView1 = new System.Windows.Forms.TreeView();
+            this.logList = new System.Windows.Forms.TreeView();
             this.listView1 = new System.Windows.Forms.ListView();
             this.tlayout_main.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -58,7 +58,7 @@
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75F));
-            this.tableLayoutPanel1.Controls.Add(this.treeView1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.logList, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.listView1, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 50);
@@ -69,15 +69,16 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(584, 461);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // treeView1
+            // logList
             // 
-            this.treeView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.treeView1.Location = new System.Drawing.Point(6, 0);
-            this.treeView1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(134, 461);
-            this.treeView1.TabIndex = 0;
+            this.logList.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.logList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.logList.FullRowSelect = true;
+            this.logList.Location = new System.Drawing.Point(6, 0);
+            this.logList.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.logList.Name = "logList";
+            this.logList.Size = new System.Drawing.Size(134, 461);
+            this.logList.TabIndex = 0;
             // 
             // listView1
             // 
@@ -105,6 +106,7 @@
             this.Name = "frm_Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.frm_Main_Load);
             this.tlayout_main.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -115,7 +117,7 @@
 
         private System.Windows.Forms.TableLayoutPanel tlayout_main;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.TreeView treeView1;
+        private System.Windows.Forms.TreeView logList;
         private System.Windows.Forms.ListView listView1;
     }
 }

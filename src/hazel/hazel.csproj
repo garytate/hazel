@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{B4B2DCB2-2059-4632-8593-93A994960AE4}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Hazel_V2</RootNamespace>
-    <AssemblyName>Hazel V2</AssemblyName>
+    <RootNamespace>Hazel</RootNamespace>
+    <AssemblyName>Hazel</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>

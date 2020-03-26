@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace Hazel_V2
+namespace Hazel
 {
     static class Program
     {

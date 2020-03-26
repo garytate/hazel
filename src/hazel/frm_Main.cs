@@ -7,13 +7,25 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Hazel_V2
+namespace Hazel
 {
     public partial class frm_Main : Form
     {
         public frm_Main()
         {
             InitializeComponent();
+        }
+
+        private void frm_Main_Load(object sender, EventArgs e)
+        {
+            List<string> logs = new List<string>();
+            logs.Add("25-11-2019");
+            logs.Add("30-12-2020");
+
+            foreach (string log in logs)
+            {
+                logList.Nodes.Add(log);
+            }
         }
     }
 }

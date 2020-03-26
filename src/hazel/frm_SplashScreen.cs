@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Hazel_V2
+namespace Hazel
 {
     public partial class frm_SplashScreen : Form
     {
