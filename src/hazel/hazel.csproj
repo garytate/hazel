@@ -47,8 +47,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>appIcon.ico</ApplicationIcon>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup />
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -106,12 +107,16 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="appIcon.ico" />
-    <Content Include="assets\appIcon.png" />
+    <Content Include="assets\app.ico" />
+    <Content Include="assets\app.png" />
+    <None Include="Resources\icon.ico" />
+    <None Include="assets\appIcon.png" />
+    <Content Include="assets\icon.ico" />
+    <Content Include="icon.ico" />
+    <None Include="Resources\app.ico" />
+    <None Include="Resources\app.bmp" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="functions\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
       <Visible>False</Visible>
