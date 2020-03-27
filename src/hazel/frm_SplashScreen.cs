@@ -28,7 +28,7 @@ namespace Hazel
         {
             if (blueProgressBar1.Value != 100)
             {
-                blueProgressBar1.Value += 5;
+                blueProgressBar1.Value += 25;
             }
             else
             {

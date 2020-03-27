@@ -72,6 +72,7 @@
             // logList
             // 
             this.logList.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.logList.CheckBoxes = true;
             this.logList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.logList.FullRowSelect = true;
             this.logList.Location = new System.Drawing.Point(6, 0);
