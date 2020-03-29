@@ -14,7 +14,7 @@ namespace Hazel
             Dictionary<string, DateTime> LogFiles = new Dictionary<string, DateTime>();
             string logDirectory = $@"{directory}\logs";
 
-            // Create log folder if no existant
+            // Create log folder if not existant
             if (!Directory.Exists(logDirectory))
                 Directory.CreateDirectory(logDirectory);
 
@@ -28,28 +28,5 @@ namespace Hazel
 
             return LogFiles;
         }
-
-        /*
-        public List<string> GetAllLogs(string directory)
-        {
-            List<string> logFiles = new List<string>();
-            string logDirectory = $@"{directory}\logs";
-
-            // Create log folder if not existant.
-            if (!Directory.Exists(logDirectory))
-            {
-                Directory.CreateDirectory(logDirectory);
-            }
-
-            // Collect all log files into a List<string>
-            foreach (string file in Directory.GetFiles((logDirectory), "*.txt"))
-            {
-                logFiles.Add(file);
-            }
-
-            // List<string> - file paths of all log files.
-            return logFiles;
-        }
-        */
     }
 }
