@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Main));
             this.tlayout_main = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.logList = new System.Windows.Forms.TreeView();
+            this.TreeView_LogList = new System.Windows.Forms.TreeView();
             this.listView1 = new System.Windows.Forms.ListView();
             this.tlayout_main.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -58,8 +58,8 @@
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75F));
-            this.tableLayoutPanel1.Controls.Add(this.logList, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.listView1, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.TreeView_LogList, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 50);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
@@ -69,17 +69,20 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(584, 461);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // logList
+            // TreeView_LogList
             // 
-            this.logList.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.logList.CheckBoxes = true;
-            this.logList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.logList.FullRowSelect = true;
-            this.logList.Location = new System.Drawing.Point(6, 0);
-            this.logList.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.logList.Name = "logList";
-            this.logList.Size = new System.Drawing.Size(134, 461);
-            this.logList.TabIndex = 0;
+            this.TreeView_LogList.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TreeView_LogList.CheckBoxes = true;
+            this.TreeView_LogList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TreeView_LogList.FullRowSelect = true;
+            this.TreeView_LogList.HotTracking = true;
+            this.TreeView_LogList.Indent = 10;
+            this.TreeView_LogList.ItemHeight = 20;
+            this.TreeView_LogList.Location = new System.Drawing.Point(6, 0);
+            this.TreeView_LogList.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.TreeView_LogList.Name = "TreeView_LogList";
+            this.TreeView_LogList.Size = new System.Drawing.Size(134, 461);
+            this.TreeView_LogList.TabIndex = 0;
             // 
             // listView1
             // 
@@ -118,7 +121,7 @@
 
         private System.Windows.Forms.TableLayoutPanel tlayout_main;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.TreeView logList;
+        private System.Windows.Forms.TreeView TreeView_LogList;
         private System.Windows.Forms.ListView listView1;
     }
 }
