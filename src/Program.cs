@@ -53,7 +53,6 @@ namespace Hazel
                 string keyInput = Console.ReadKey().Key.ToString();
                 char input = keyInput[keyInput.Length - 1];
                 Console.Clear();
-                Console.WriteLine(input);
                 Console.ForegroundColor = ConsoleColor.Cyan;
                 Console.WriteLine("{0}: Version {1} maintained by {2}.\n", appTitle, appVersion, appAuthor);
                 Console.ResetColor();
