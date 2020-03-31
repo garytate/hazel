@@ -51,51 +51,53 @@ namespace Hazel
                 displayObj.DisplayMenu(options, logFiles, characters);
                 Console.Write("> ");
                 string keyInput = Console.ReadKey().Key.ToString();
+                char input = keyInput[keyInput.Length - 1];
                 Console.Clear();
+                Console.WriteLine(input);
                 Console.ForegroundColor = ConsoleColor.Cyan;
                 Console.WriteLine("{0}: Version {1} maintained by {2}.\n", appTitle, appVersion, appAuthor);
                 Console.ResetColor();
-                switch (keyInput)
+                switch (input)
                 {
-                    case "D1":
+                    case '1':
                         //Reload Characters
                         logFiles = fileManagerObj.GetAllLogs(appDirectory);
                         Console.WriteLine("Files reloaded.");
                         break;
-                    case "D2":
+                    case '2':
                         // Select log timerange
                         Console.ForegroundColor = ConsoleColor.Red;
                         Console.WriteLine("{0} not yet supported.", options[1]);
                         Console.ResetColor();
                         break;
-                    case "D3":
+                    case '3':
                         // Check Activity
                         activityObj.DisplayActivity(appDirectory, characters, logFiles);
                         break;
-                    case "D4":
+                    case '4':
                         // Check for Keywords
                         List<string> keywords = keywordObj.GetKeywords();
                         keywordObj.DisplayKeywords(appDirectory, characters, logFiles, keywords);
                         break;
-                    case "D5":
+                    case '5':
                         // Get Log Files
                         foreach (string logFile in logFiles)
                         {
                             Console.WriteLine(logFile);
                         }
                         break;
-                    case "D6":
+                    case '6':
                         // Get Characters
                         foreach (string character in characters)
                         {
                             Console.WriteLine(character);
                         }
                         break;
-                    case "D7":
+                    case '7':
                         // containers
                         ContainerObj.ReturnAllContainers(logFiles);
                         break;
-                    case "D8":
+                    case '8':
                         // Exit program
                         System.Environment.Exit(1);
                         break;
