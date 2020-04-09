@@ -6,6 +6,14 @@ namespace Hazel
 {
     class Program
     {
+
+        private static Random _random = new Random();
+        private static ConsoleColor GetRandomConsoleColor()
+        {
+            var consoleColors = Enum.GetValues(typeof(ConsoleColor));
+            return (ConsoleColor)consoleColors.GetValue(_random.Next(consoleColors.Length));
+        }
+
         static void Main(string[] args)
         {
 
@@ -16,10 +24,11 @@ namespace Hazel
             Activity activityObj = new Activity();
             Keywords keywordObj = new Keywords();
             Container ContainerObj = new Container();
+            Transfer TransferObj = new Transfer();
             
             // Initialising the program
-            string appTitle = "Hazel";
-            string appVersion = "20.03d";
+            string appTitle = "hazel";
+            string appVersion = "20.03e";
             string appAuthor = "Gary Tate";
             string appDirectory = System.Environment.CurrentDirectory;
             bool active = true;
@@ -32,6 +41,7 @@ namespace Hazel
                 "Get Log Files",
                 "Get Characters",
                 "Get Containers",
+                "Check Transfers",
                 "Quit Program"
             };
 
@@ -97,6 +107,20 @@ namespace Hazel
                         ContainerObj.ReturnAllContainers(logFiles);
                         break;
                     case '8':
+                        List<TokenTransfer> transfers = TransferObj.GetTokenTransfers(logFiles);
+                        List<TokenTransfer> potential = TransferObj.GetPotentialTransfers(transfers);
+
+                        
+
+                        foreach(TokenTransfer log in potential)
+                        {
+                            Console.ForegroundColor = GetRandomConsoleColor();
+                            Console.WriteLine(log.log);
+                            Console.ResetColor();
+                        }
+                        Console.ReadLine();
+                        break;
+                    case '9':
                         // Exit program
                         System.Environment.Exit(1);
                         break;
