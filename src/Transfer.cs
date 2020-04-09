@@ -50,7 +50,7 @@ namespace Hazel
 			{
 				for (int j = i + 1; j < logs.Count; j++)
 				{
-					if (logs[i].steamID == logs[j].steamID && logs[i].character != logs[j].character) {
+					if (logs[i].steamID == logs[j].steamID && logs[i].character != logs[j].character && logs[i].steamID != "STEAM_ERROR") {
 						potential.Add(logs[i]);
 						potential.Add(logs[j]);
 					}

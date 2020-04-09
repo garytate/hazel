@@ -110,16 +110,19 @@ namespace Hazel
                         List<TokenTransfer> transfers = TransferObj.GetTokenTransfers(logFiles);
                         List<TokenTransfer> potential = TransferObj.GetPotentialTransfers(transfers);
 
-                        
+                        Int32 colorMatcher = 0;
 
                         foreach(TokenTransfer log in potential)
                         {
-                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            if (colorMatcher % 2 == 0 ) Console.ForegroundColor = ConsoleColor.Green;
+                            else Console.ForegroundColor = ConsoleColor.Green;
                             Console.WriteLine($" {log.container} :: {log.character} - {log.steam} - {log.steamID}");
                             Console.ResetColor();
                             Console.WriteLine(log.log);
-                            
+                            if (colorMatcher % 2 != 0) Console.Write("\n");
+                            colorMatcher++;
                         }
+
                         Console.ReadLine();
                         break;
                     case '9':
