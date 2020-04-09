@@ -46,8 +46,6 @@ namespace Hazel
 		{
 			List<TokenTransfer> potential = new List<TokenTransfer>();
 
-			Console.WriteLine(logs.Count);
-
 			for (int i = 0; i < logs.Count; i++)
 			{
 				for (int j = i + 1; j < logs.Count; j++)

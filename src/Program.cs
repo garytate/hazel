@@ -28,7 +28,7 @@ namespace Hazel
             
             // Initialising the program
             string appTitle = "hazel";
-            string appVersion = "20.03e";
+            string appVersion = "20.03f";
             string appAuthor = "Gary Tate";
             string appDirectory = System.Environment.CurrentDirectory;
             bool active = true;
@@ -114,9 +114,11 @@ namespace Hazel
 
                         foreach(TokenTransfer log in potential)
                         {
-                            Console.ForegroundColor = GetRandomConsoleColor();
-                            Console.WriteLine(log.log);
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            Console.WriteLine($" {log.container} :: {log.character} - {log.steam} - {log.steamID}");
                             Console.ResetColor();
+                            Console.WriteLine(log.log);
+                            
                         }
                         Console.ReadLine();
                         break;
