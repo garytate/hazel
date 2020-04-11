@@ -28,8 +28,8 @@ namespace Hazel
 
             // Initialising the program
             string appTitle = "hazel";
-            string appVersion = "20.03f";
-            string appAuthor = "Gary Tate";
+            string appVersion = "20.04";
+            string appAuthor = "garytate";
             string appDirectory = System.Environment.CurrentDirectory;
             bool active = true;
 
@@ -124,6 +124,9 @@ namespace Hazel
                             if (colorMatcher % 2 != 0) Console.Write("\n");
                             colorMatcher++;
                         }
+
+                        if (potential.Count == 0)
+                            Console.WriteLine("No transfers found.\n");
 
                         Console.ReadKey();
                         break;
