@@ -1,43 +1,53 @@
 using System;
 using System.IO;
 using System.Collections.Generic;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Hazel
 {
 	class Transfer
-	// tokens left).
 	{
 		public List<TokenTransfer> GetTokenTransfers(List<string> logs)
 		{
 			List<TokenTransfer> transferLogs = new List<TokenTransfer>();
-			//List<string> transferLogs = new List<string>();
-			string currentLine = string.Empty;
+			Dictionary<string, string> transfers = new Dictionary<string, string>();
+			string line = string.Empty;
 
-			foreach (string logFile in logs)
+			foreach(string file in logs)
 			{
-				System.IO.StreamReader log = new System.IO.StreamReader(logFile);
+				System.IO.StreamReader log = new System.IO.StreamReader(file);
+				string date = Path.GetFileNameWithoutExtension(file);
 
-				while ((currentLine = log.ReadLine()) != null)
+				while ((line = log.ReadLine()) != null)
 				{
-					if (currentLine.Contains("tokens left)."))
+					if (line.Contains("tokens left)."))
 					{
-						string fileName = Path.GetFileNameWithoutExtension(logFile);
-						currentLine = currentLine.Insert(1, $"{fileName} ");
-
-						TokenTransfer newTransfer = new TokenTransfer(
-							this.GetContainerID(currentLine), // Container
-							this.GetContainerCharacter(currentLine), // Character
-							this.GetContainerDate(currentLine), // Date
-							currentLine, // Log
-							this.GetSteamName(this.GetContainerCharacter(currentLine), logFile), // Steam
-							this.GetSteamID(this.GetSteamName(this.GetContainerCharacter(currentLine), logFile), logFile), // SteamID
-							this.GetTokenAmount(currentLine) // Amount
-						);
-						transferLogs.Add(newTransfer);
+						line = line.Insert(1, $"{date} ");
+						transfers.Add(line, file);
 					}
-					
 				}
 			}
+
+			Parallel.ForEach(transfers, transfer =>
+			{
+				var date = Path.GetFileNameWithoutExtension(transfer.Value);
+				var container = this.GetContainerID(transfer.Key);
+				var character = this.GetContainerCharacter(transfer.Key);
+				var steamName = this.GetSteamName(character, transfer.Value);
+				var steamID = this.GetSteamID(steamName, transfer.Value);
+				var tokens = this.GetTokenAmount(transfer.Key);
+
+				transferLogs.Add(new TokenTransfer(
+					container,
+					character,
+					date,
+					transfer.Key,
+					steamName,
+					steamID,
+					tokens
+				));
+			});
 
 			return transferLogs;
 		}
@@ -50,7 +60,8 @@ namespace Hazel
 			{
 				for (int j = i + 1; j < logs.Count; j++)
 				{
-					if (logs[i].steamID == logs[j].steamID && logs[i].character != logs[j].character && logs[i].steamID != "STEAM_ERROR") {
+					if (logs[i].steamID == logs[j].steamID && logs[i].character != logs[j].character && logs[i].steamID != "STEAM_ERROR")
+					{
 						potential.Add(logs[i]);
 						potential.Add(logs[j]);
 					}
