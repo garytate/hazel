@@ -33,6 +33,7 @@ namespace Hazel
             string appDirectory = System.Environment.CurrentDirectory;
             bool active = true;
 
+            // Generates menu from array
             string[] options = {
                 "Reload Files",
                 "Select Timerange [WIP]",
