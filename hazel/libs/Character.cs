@@ -11,8 +11,8 @@ namespace Hazel
         {
             List<string> characters = new List<string>();
             string currentLine = string.Empty;
-            string charDirectory = $@"{directory}\characters";
-            string charTextFile = $@"{charDirectory}\characters.txt";
+            string charDirectory = Path.Combine(directory, "characters");
+            string charTextFile = Path.Combine(charDirectory, "characters.txt");
 
             // We need to create the directory first if it doesn't exist.
             if (!Directory.Exists(charDirectory))

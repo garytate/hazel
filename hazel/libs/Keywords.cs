@@ -81,7 +81,7 @@ namespace Hazel
 
                 Console.Write("\nOutput file name: ");
                 string outputFileName = Console.ReadLine();
-                outputFile = $@"{outputDir}\{outputFileName}.txt";
+                outputFile = Path.Combine(outputDir, $"{outputFileName}.txt");
                 if (outputFile == string.Empty)
                 {
                     outputFile = "output";

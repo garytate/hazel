@@ -41,7 +41,7 @@ namespace Hazel
 
             if (isOutput)
             {
-                string outputDir = $@"{directory}\output";
+                string outputDir = Path.Combine(directory, "output");
 
                 if (!Directory.Exists(outputDir))
                 {

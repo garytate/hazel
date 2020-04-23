@@ -10,7 +10,7 @@ namespace Hazel
         public List<string> GetAllLogs(string directory)
         {
             List<string> logFiles = new List<string>();
-            string logDirectory = $@"{directory}\logs";
+            string logDirectory = Path.Combine(directory, "logs");
             
             // Create log folder if not existant.
             if (!Directory.Exists(logDirectory))
