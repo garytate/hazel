@@ -4,6 +4,8 @@
 
 Administrative log hunting and activity checkers.
 
+Hazel is no longer receiving support outside of bug fixes, as an updated alternative is in development which will be a major upgrade over hazel.
+
 ![Interface](https://i.imgur.com/sfTzpH6.png)
 
 ## Dependencies
