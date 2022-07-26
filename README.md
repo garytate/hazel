@@ -9,11 +9,10 @@ Hazel is no longer receiving support outside of bug fixes, as an updated alterna
 ![Interface](https://i.imgur.com/sfTzpH6.png)
 
 ## Dependencies
-[.NET Core 3.0 (or above) - Microsoft](https://dotnet.microsoft.com/download/dotnet-framework)
+[.NET Core 6.0 - Microsoft](https://dotnet.microsoft.com/en-us/download/dotnet/6.0)
 
 ## Building from source
-- Navigate to /src/ in a terminal
-- $ dotnet publish
+`dotnet publish hazel`
 
 ## Support
 For any support inquiries, add Gary#1170 on Discord
