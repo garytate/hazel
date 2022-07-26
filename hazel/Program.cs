@@ -1,40 +1,40 @@
-﻿using System;
-using System.Collections.Generic;
-using Octokit;
+﻿using Hazel.Modules;
 
-namespace Hazel
+namespace Hazel;
+
+public class Program
 {
-    class Program
+    private static readonly Random _random = new();
+
+    private static ConsoleColor GetRandomConsoleColor()
     {
+        var consoleColors = Enum.GetValues(typeof(ConsoleColor));
+        return (ConsoleColor)consoleColors.GetValue(_random.Next(consoleColors.Length));
+    }
 
-        private static Random _random = new Random();
-        private static ConsoleColor GetRandomConsoleColor()
+    private static void Main(string[] args)
+    {
+        try
         {
-            var consoleColors = Enum.GetValues(typeof(ConsoleColor));
-            return (ConsoleColor)consoleColors.GetValue(_random.Next(consoleColors.Length));
-        }
-
-        static void Main(string[] args)
-        {
-
             // Class imports
-            Display displayObj = new Display();
-            FileManager fileManagerObj = new FileManager();
-            Character characterObj = new Character();
-            Activity activityObj = new Activity();
-            Keywords keywordObj = new Keywords();
-            Container ContainerObj = new Container();
-            Transfer TransferObj = new Transfer();
+            var displayObj = new Display();
+            var fileManagerObj = new FileManager();
+            var characterObj = new Character();
+            var activityObj = new Activity();
+            var keywordObj = new Keywords();
+            var containerObj = new Container();
+            var transferObj = new Transfer();
 
             // Initialising the program
-            string appTitle = "hazel";
-            string appVersion = "20.04";
-            string appAuthor = "garytate";
-            string appDirectory = System.Environment.CurrentDirectory;
-            bool active = true;
+            var appTitle = "hazel";
+            var appVersion = "22.07";
+            var appAuthor = "garytate";
+            var appDirectory = Environment.CurrentDirectory;
+            var active = true;
 
             // Generates menu from array
-            string[] options = {
+            string[] options =
+            {
                 "Reload Files",
                 "Select Timerange [WIP]",
                 "Check Activity",
@@ -54,23 +54,26 @@ namespace Hazel
             Console.WriteLine("{0}: Version {1} maintained by {2}.\n", appTitle, appVersion, appAuthor);
             Console.ResetColor();
 
-            List<string> logFiles = fileManagerObj.GetAllLogs(appDirectory);
-            List<string> characters = characterObj.GetAllCharacters(appDirectory);
+            var logFiles = fileManagerObj.GetAllLogs(appDirectory);
+            var characters = characterObj.GetAllCharacters(appDirectory);
 
             while (active)
             {
                 displayObj.DisplayMenu(options, logFiles, characters);
+
                 Console.Write("> ");
-                string keyInput = Console.ReadKey().Key.ToString();
-                char input = keyInput[keyInput.Length - 1];
+                var keyInput = Console.ReadKey().Key.ToString();
+                var input = keyInput[keyInput.Length - 1];
                 Console.Clear();
+
                 Console.ForegroundColor = ConsoleColor.Cyan;
                 Console.WriteLine("{0}: Version {1} maintained by {2}.\n", appTitle, appVersion, appAuthor);
                 Console.ResetColor();
+
                 switch (input)
                 {
                     case '1':
-                        //Reload Characters
+                        // Reload Characters
                         logFiles = fileManagerObj.GetAllLogs(appDirectory);
                         Console.WriteLine("Files reloaded.");
                         break;
@@ -86,34 +89,28 @@ namespace Hazel
                         break;
                     case '4':
                         // Check for Keywords
-                        List<string> keywords = keywordObj.GetKeywords();
+                        var keywords = keywordObj.GetKeywords();
                         keywordObj.DisplayKeywords(appDirectory, characters, logFiles, keywords);
                         break;
                     case '5':
                         // Get Log Files
-                        foreach (string logFile in logFiles)
-                        {
-                            Console.WriteLine(logFile);
-                        }
+                        foreach (var logFile in logFiles) Console.WriteLine(logFile);
                         break;
                     case '6':
                         // Get Characters
-                        foreach (string character in characters)
-                        {
-                            Console.WriteLine(character);
-                        }
+                        foreach (var character in characters) Console.WriteLine(character);
                         break;
                     case '7':
                         // containers
-                        ContainerObj.ReturnAllContainers(logFiles);
+                        containerObj.ReturnAllContainers(logFiles);
                         break;
                     case '8':
-                        List<TokenTransfer> transfers = TransferObj.GetTokenTransfers(logFiles);
-                        List<TokenTransfer> potential = TransferObj.GetPotentialTransfers(transfers);
+                        var transfers = transferObj.GetTokenTransfers(logFiles);
+                        var potential = transferObj.GetPotentialTransfers(transfers);
 
-                        Int32 colorMatcher = 0;
+                        var colorMatcher = 0;
 
-                        foreach (TokenTransfer log in potential)
+                        foreach (var log in potential)
                         {
                             if (colorMatcher % 2 == 0) Console.ForegroundColor = ConsoleColor.Yellow;
                             else Console.ForegroundColor = ConsoleColor.Yellow;
@@ -133,7 +130,9 @@ namespace Hazel
                         break;
                     case '9':
                         // Exit program
-                        System.Environment.Exit(1);
+                        active = false;
+
+                        Environment.Exit(1);
                         break;
                     default:
                         Console.ForegroundColor = ConsoleColor.Red;
@@ -141,9 +140,15 @@ namespace Hazel
                         Console.ResetColor();
                         break;
                 }
-                Console.WriteLine();
 
+                Console.WriteLine();
             }
+        } catch (Exception e)
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("Error: {0}", e.Message);
+            Console.ResetColor();
         }
+        
     }
 }
